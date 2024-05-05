@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import company.abstracts.Employee;
-
 public class Main {
     public static void main(String[] args) {
         Worker worker1 = new Worker("Jan", 1000, 1, "2023-01-01", "Junior Developer");
@@ -35,5 +37,6 @@ public class Main {
         System.out.println(worker5.getName() + " equals manager: " + worker5.equals(manager2));
         System.out.println(worker5.getName() + " equals worker2: " + worker5.equals(worker6));
         System.out.println(worker5.getName() + " equals worker3: " + worker5.equals(worker7));
+        
     }
 }
