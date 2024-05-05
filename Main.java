@@ -1,25 +1,22 @@
 public class Main {
     public static void main(String[] args) {
-        Worker worker1 = new Worker("Jan", 1000);
-        Worker worker2 = new Worker("Klara", 1200);
-        Worker worker3 = new Worker("Olek", 1100);
-        Worker worker4 = new Worker("Justyna", 1150);
+        Worker worker1 = new Worker("Jan", 1000, 1, "2023-01-01", "Junior Developer");
+        Worker worker2 = new Worker("Klara", 1200, 2, "2022-12-15", "Senior Developer");
+        Worker worker3 = new Worker("Olek", 1100, 3, "2023-02-10", "QA Engineer");
+        Worker worker4 = new Worker("Justyna", 1150, 4, "2023-03-05", "Project Manager");
 
-        Manager manager = new Manager("Darek", 3000, 1500);
+        Manager manager = new Manager("Darek", 3000, 1500, 5, "2022-11-20", "Development Manager");
 
-        System.out.println("Worker 1 salary: " + worker1.getSalary());
-        worker1.work();
+        ArrayList<Employee> employees = new ArrayList<>();
+        employees.add(worker1);
+        employees.add(worker2);
+        employees.add(worker3);
+        employees.add(worker4);
+        employees.add(manager);
         
-        System.out.println("Worker 2 salary: " + worker2.getSalary());
-        worker2.work();
-        
-        System.out.println("Worker 3 salary: " + worker3.getSalary());
-        worker3.work();
-        
-        System.out.println("Worker 4 salary: " + worker4.getSalary());
-        worker4.work();
-        
-        System.out.println("Manager salary: " + manager.getSalary());
-        manager.work();
+        for (Employee employee : employees) {
+            employee.work();
+            System.out.println("- " + employee.getName() + " (ID: " + employee.hashCode() + ", Position: " + employee.getPosition() + ", Hire date: " + employee.getHireDate() + ", Salary: " + employee.getSalary() + ")");
+        }
     }
 }
